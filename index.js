@@ -1,17 +1,23 @@
-class Solution {
-  rotate(arr) {
-    // store last element
-    const last = arr[arr.length - 1];
+// let str = "";
+// for (let i = 1; i < 11; i++) {
+//   str += i + "";
+// }
+// console.log(i);
 
-    // shift elements to the right
-    for (let i = arr.length - 1; i > 0; i--) {
-      arr[i] = arr[i - 1];
-    }
+function fibon(n = 2) {
+  let a = 0,
+    b = 1;
+  if (n === 1) return [0];
+  let arr = [];
+  arr = [a, b];
 
-    // put last element at first position
-    arr[0] = last;
+  for (let i = 2; i < n; i++) {
+    let sum = a + b;
+    arr.push(sum);
+    a = b;
+    b = sum;
   }
+  return arr;
 }
-let arr = [1, 2, 3, 4, 5];
-new Solution().rotate(arr);
-console.log(arr); // [5, 1, 2, 3, 4]
+
+fibon();
