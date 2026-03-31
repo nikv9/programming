@@ -1,0 +1,183 @@
+// Patterns
+function main() {
+  const n = 4;
+  ((i = row), (j = col));
+
+  // * * * *
+  // * * * *
+  // * * * *
+  // * * * *
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= n; j++) {
+      line += " * ";
+    }
+    console.log(line);
+  }
+
+  // *
+  // * *
+  // * * *
+  // * * * *
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= i; j++) {
+      line += "* ";
+    }
+    console.log(line);
+  }
+
+  // 1111
+  // 2222
+  // 3333
+  // 4444
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= n; j++) {
+      line += i;
+    }
+    console.log(line);
+  }
+
+  // 1234
+  // 1234
+  // 1234
+  // 1234
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= n; j++) {
+      line += j;
+    }
+    console.log(line);
+  }
+
+  // 4444
+  // 3333
+  // 2222
+  // 1111
+  for (let i = n; i >= 1; i--) {
+    let line = "";
+    for (let j = 1; j <= n; j++) {
+      line += i;
+    }
+    console.log(line);
+  }
+
+  // 4321
+  // 4321
+  // 4321
+  // 4321
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = n; j >= 1; j--) {
+      line += j;
+    }
+    console.log(line);
+  }
+
+  // 1 2 3 4
+  // 5 6 7 8
+  // 9 10 11 12
+  // 13 14 15 16
+  let count = 1;
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= n; j++) {
+      line = line + count + " ";
+      count++;
+    }
+    console.log(line);
+  }
+
+  // 1
+  // 22
+  // 333
+  // 4444
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= i; j++) {
+      line += i;
+    }
+    console.log(line);
+  }
+
+  // 1
+  // 2 3
+  // 4 5 6
+  // 7 8 9 10
+  let count = 1;
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= i; j++) {
+      line = line + count + " ";
+      count++;
+    }
+    console.log(line);
+  }
+
+  // 1
+  // 2 3
+  // 4 5 6
+  // 7 8 9 10
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 0; j < i; j++) {
+      line += i + j + " ";
+    }
+    console.log(line);
+  }
+
+  // 1
+  // 2 1
+  // 3 2 1
+  // 4 3 2 1
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = i; j >= 1; j--) {
+      line += j + " ";
+    }
+    console.log(line);
+  }
+
+  //  AAAA
+  //  BBBB
+  //  CCCC
+  //  DDDD
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= n; j++) {
+      const x = String.fromCharCode("A".charCodeAt(0) + i - 1);
+      line += x;
+    }
+    console.log(line);
+  }
+
+  // ABCD
+  // ABCD
+  // ABCD
+  // ABCD
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= n; j++) {
+      const letter = String.fromCharCode("A".charCodeAt(0) + j - 1);
+      line += letter;
+    }
+    console.log(line);
+  }
+
+  // A
+  // B C
+  // D E F
+  // G H I J
+  let currentChar = "A";
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= i; j++) {
+      line += currentChar;
+      currentChar = String.fromCharCode(currentChar.charCodeAt(0) + 1) + " ";
+    }
+    console.log(line);
+  }
+}
+
+main();
