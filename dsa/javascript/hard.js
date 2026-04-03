@@ -1,5 +1,3 @@
-// Problems from ds.docx and algo.docx
-
 // Leaders in an Array
 function leadersInArray(arr) {
   const result = [];

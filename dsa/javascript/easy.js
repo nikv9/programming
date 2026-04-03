@@ -22,7 +22,6 @@ class Solution {
 // Input: arr[] = [1, 2, 3, 4], x = 3
 // Output: 2
 // Explanation: For array [1, 2, 3, 4], the element to be searched is 3. Since 3 is present at index 2, the output is 2.
-
 class Solution {
   search(arr, x) {
     let ans = -1;
@@ -42,7 +41,6 @@ class Solution {
 // Input: a[] = [11, 7, 1, 13, 21, 3, 7, 3], b[] = [11, 3, 7, 1, 7]
 // Output: true
 // Explanation: b[] is a subset of a[]
-
 class Solution {
   isSubset(a, b) {
     let freq = {};
@@ -61,7 +59,6 @@ class Solution {
 }
 
 // Given an integer n. Your task is to calculate the sum of all natural numbers from 1 up to n (inclusive). If n is 0, the sum should be 0.
-
 class Solution {
   findSum(n) {
     let sum = 0;
@@ -80,7 +77,6 @@ class Solution {
 // Input: arr[] = [1, 2, 3, 4, 6], k = 6
 // Output: true
 // Exlpanation: Since, 6 is present in the array at index 4 (0-based indexing), output is true.
-
 class Solution {
   searchInSorted(arr, k) {
     for (let i = 0; i < arr.length; i++) {
@@ -96,7 +92,6 @@ class Solution {
 // Input: arr[] = [1, 2, 3, 4, 5]
 // Output: [5, 1, 2, 3, 4]
 // Explanation: If we rotate arr by one position in clockwise 5 come to the front and remaining those are shifted to the end.
-
 class Solution {
   rotate(arr) {
     let lastElement = arr[arr.length - 1];
@@ -141,7 +136,6 @@ class Solution {
 //         this.next = null;
 //     }
 // }
-
 class Solution {
   getCount(head) {
     let count = 0;
@@ -161,7 +155,6 @@ class Solution {
 // Examples:
 // Input: n = 5
 // Output: [0, 1, 1, 2, 3]
-
 class Solution {
   fibonacciNumbers(n) {
     let a = 0,
@@ -377,8 +370,6 @@ class Solution {
     return ans;
   }
 }
-
-// Problems from ds.docx and algo.docx
 
 // Equilibrium Point
 function equilibriumPoint(arr) {
