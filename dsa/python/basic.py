@@ -1,7 +1,7 @@
 # Patterns
-
 def main():
     n = 4
+    # i = row index, j = column index
 
     # * * * *
     # * * * *
@@ -10,7 +10,7 @@ def main():
     for i in range(1, n + 1):
         line = ""
         for j in range(1, n + 1):
-            line += " * "
+            line += "* "
         print(line)
 
     # *
@@ -30,6 +30,16 @@ def main():
     for i in range(1, n + 1):
         line = ""
         for j in range(1, n + 1):
+            line += str(i)
+        print(line)
+
+    # 1
+    # 22
+    # 333
+    # 4444
+    for i in range(1, n + 1):
+        line = ""
+        for j in range(1, i + 1):
             line += str(i)
         print(line)
 
@@ -71,18 +81,8 @@ def main():
     for i in range(1, n + 1):
         line = ""
         for j in range(1, n + 1):
-            line += str(count) + " "
+            line = line + str(count) + " "
             count += 1
-        print(line)
-
-    # 1
-    # 22
-    # 333
-    # 4444
-    for i in range(1, n + 1):
-        line = ""
-        for j in range(1, i + 1):
-            line += str(i)
         print(line)
 
     # 1
@@ -93,18 +93,8 @@ def main():
     for i in range(1, n + 1):
         line = ""
         for j in range(1, i + 1):
-            line += str(count) + " "
+            line = line + str(count) + " "
             count += 1
-        print(line)
-
-    # 1
-    # 2 3
-    # 4 5 6
-    # 7 8 9 10
-    for i in range(1, n + 1):
-        line = ""
-        for j in range(i):
-            line += str(i + j) + " "
         print(line)
 
     # 1
@@ -117,14 +107,14 @@ def main():
             line += str(j) + " "
         print(line)
 
-    # AAAA
-    # BBBB
-    # CCCC
-    # DDDD
+    #  AAAA
+    #  BBBB
+    #  CCCC
+    #  DDDD
     for i in range(1, n + 1):
         line = ""
         for j in range(1, n + 1):
-            x = chr(ord('A') + i - 1)
+            x = chr(ord("A") + i - 1)
             line += x
         print(line)
 
@@ -135,21 +125,7 @@ def main():
     for i in range(1, n + 1):
         line = ""
         for j in range(1, n + 1):
-            letter = chr(ord('A') + j - 1)
+            letter = chr(ord("A") + j - 1)
             line += letter
         print(line)
-
-    # A
-    # B C
-    # D E F
-    # G H I J
-    current_char = 'A'
-    for i in range(1, n + 1):
-        line = ""
-        for j in range(1, i + 1):
-            line += current_char + " "
-            current_char = chr(ord(current_char) + 1)
-        print(line)
-
-
 main()

@@ -1,7 +1,7 @@
 // Patterns
 function main() {
   const n = 4;
-  ((i = row), (j = col));
+  // i = row index, j = column index
 
   // * * * *
   // * * * *
@@ -10,7 +10,7 @@ function main() {
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= n; j++) {
-      line += " * ";
+      line += "* ";
     }
     console.log(line);
   }
@@ -34,6 +34,18 @@ function main() {
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= n; j++) {
+      line += i;
+    }
+    console.log(line);
+  }
+
+  // 1
+  // 22
+  // 333
+  // 4444
+  for (let i = 1; i <= n; i++) {
+    let line = "";
+    for (let j = 1; j <= i; j++) {
       line += i;
     }
     console.log(line);
@@ -79,52 +91,32 @@ function main() {
   // 5 6 7 8
   // 9 10 11 12
   // 13 14 15 16
-  let count = 1;
-  for (let i = 1; i <= n; i++) {
-    let line = "";
-    for (let j = 1; j <= n; j++) {
-      line = line + count + " ";
-      count++;
+  {
+    let count = 1;
+    for (let i = 1; i <= n; i++) {
+      let line = "";
+      for (let j = 1; j <= n; j++) {
+        line = line + count + " ";
+        count++;
+      }
+      console.log(line);
     }
-    console.log(line);
-  }
-
-  // 1
-  // 22
-  // 333
-  // 4444
-  for (let i = 1; i <= n; i++) {
-    let line = "";
-    for (let j = 1; j <= i; j++) {
-      line += i;
-    }
-    console.log(line);
   }
 
   // 1
   // 2 3
   // 4 5 6
   // 7 8 9 10
-  let count = 1;
-  for (let i = 1; i <= n; i++) {
-    let line = "";
-    for (let j = 1; j <= i; j++) {
-      line = line + count + " ";
-      count++;
+  {
+    let count = 1;
+    for (let i = 1; i <= n; i++) {
+      let line = "";
+      for (let j = 1; j <= i; j++) {
+        line = line + count + " ";
+        count++;
+      }
+      console.log(line);
     }
-    console.log(line);
-  }
-
-  // 1
-  // 2 3
-  // 4 5 6
-  // 7 8 9 10
-  for (let i = 1; i <= n; i++) {
-    let line = "";
-    for (let j = 0; j < i; j++) {
-      line += i + j + " ";
-    }
-    console.log(line);
   }
 
   // 1
@@ -161,20 +153,6 @@ function main() {
     for (let j = 1; j <= n; j++) {
       const letter = String.fromCharCode("A".charCodeAt(0) + j - 1);
       line += letter;
-    }
-    console.log(line);
-  }
-
-  // A
-  // B C
-  // D E F
-  // G H I J
-  let currentChar = "A";
-  for (let i = 1; i <= n; i++) {
-    let line = "";
-    for (let j = 1; j <= i; j++) {
-      line += currentChar;
-      currentChar = String.fromCharCode(currentChar.charCodeAt(0) + 1) + " ";
     }
     console.log(line);
   }
