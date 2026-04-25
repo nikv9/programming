@@ -17,3 +17,6 @@ for (let i = 1; i <= n; i++) {
 //   }
 //   console.log(line);
 // }
+
+console.log(3, 4, "adsf");
+console.log();

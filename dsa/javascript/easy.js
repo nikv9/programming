@@ -123,6 +123,23 @@ class Solution {
   }
 }
 
+// Recursive Number Printing Algorithm
+function printNumbersRecursive(n) {
+  const result = [];
+
+  function helper(num) {
+    if (num === 0) {
+      return;
+    }
+
+    helper(num - 1);
+    result.push(num);
+  }
+
+  helper(n);
+  return result;
+}
+
 // Given head of a singly linked list. The task is to find the length of the linked list, where length is defined as the number of nodes in the linked list.
 // Examples :
 // Input: head : 1->2->3->4->5
@@ -213,31 +230,6 @@ class Solution {
   }
 }
 
-// Given an unsorted array arr[] of numbers, sort the array in ascending order.
-// Input: arr[] = [1, 5, 3, 2]
-// Output: [1, 2, 3, 5]
-// Explanation: After sorting, array will be like [1, 2, 3, 5].
-class Solution {
-  sortArr(arr) {
-    return arr.sort((a, b) => a - b);
-  }
-}
-
-// brute force
-function sortArray(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-  return arr;
-}
-
-console.log(sortArray([5, 3, 1, 4, 2]));
 
 // Given two integers a and b, You have to compute their LCM and GCD and return an array containing their LCM and GCD.
 // Input: a = 5 , b = 10
@@ -274,6 +266,15 @@ class Solution {
     }
     return ans;
   }
+}
+
+// Recursive Factorial Algorithm
+function factorialRecursive(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+
+  return n * factorialRecursive(n - 1);
 }
 
 // Given a positive integer n, determine whether it is odd or even. Return true if the number is even and false if the number is odd.
@@ -328,20 +329,6 @@ class Solution {
   }
 }
 
-// Given an integer k and array arr. Your task is to return the position of the first occurrence of k in the given array and if element k is not present in the array then return -1.
-// Input: k = 16 , arr = [9, 7, 16, 16, 4]
-// Output: 3
-// Explanation: The value 16 is found in the given array at positions 3 and 4, with position 3 being the first occurrence.
-class Solution {
-  search(k, arr) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] == k) {
-        return i + 1;
-      }
-    }
-    return -1;
-  }
-}
 
 // Given a sorted array arr[] and an integer k, find the position(0-based indexing) at which k is present in the array using binary search. If k doesn't exist in arr[] return -1.
 // Note: If multiple occurrences are there, please return the smallest index.
@@ -452,6 +439,18 @@ function findUniqueValues(arr) {
   return result;
 }
 
+// Finds the missing number from range 0 to n in the array
+function missingNumberSum(array, n) {
+  const totalSum = (n * (n + 1)) / 2;
+  let arrSum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    arrSum += array[i];
+  }
+
+  return totalSum - arrSum;
+}
+
 // Find the Missing Number in an Array
 function missingNumberXor(array, n) {
   let result = 0;
@@ -467,16 +466,7 @@ function missingNumberXor(array, n) {
   return result;
 }
 
-function missingNumberSum(array, n) {
-  const totalSum = (n * (n + 1)) / 2;
-  let arrSum = 0;
 
-  for (let i = 0; i < array.length; i++) {
-    arrSum += array[i];
-  }
-
-  return totalSum - arrSum;
-}
 
 // Find All Pairs with a Given Sum
 function pairSum(arr, target) {
@@ -493,32 +483,6 @@ function pairSum(arr, target) {
   return pairs;
 }
 
-// Search an Element and Print Its Index
-function searchElementIndex(arr, target) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) {
-      return i;
-    }
-  }
-
-  return -1;
-}
-
-// Reverse Array
-function reverseArrayDoc(arr) {
-  let start = 0;
-  let end = arr.length - 1;
-
-  while (start < end) {
-    const temp = arr[start];
-    arr[start] = arr[end];
-    arr[end] = temp;
-    start++;
-    end--;
-  }
-
-  return arr;
-}
 
 // Rotate Array
 function rotateArrayLeft(arr, pos) {
@@ -593,7 +557,6 @@ function reverseStringBuiltIn(str) {
   return str.split("").reverse().join("");
 }
 
-// Reverse a Word
 function reverseWordByDot(str) {
   return str.split(".").reverse().join(".");
 }
@@ -872,50 +835,6 @@ class LinkedListQueue {
   }
 }
 
-// Queue using Array
-class ArrayQueue {
-  constructor(size) {
-    this.arr = new Array(size);
-    this.size = size;
-    this.rear = -1;
-  }
-
-  isEmpty() {
-    return this.rear === -1;
-  }
-
-  enqueue(data) {
-    if (this.rear === this.size - 1) {
-      return;
-    }
-
-    this.rear++;
-    this.arr[this.rear] = data;
-  }
-
-  dequeue() {
-    if (this.isEmpty()) {
-      return -1;
-    }
-
-    const front = this.arr[0];
-
-    for (let i = 0; i < this.rear; i++) {
-      this.arr[i] = this.arr[i + 1];
-    }
-
-    this.rear--;
-    return front;
-  }
-
-  peek() {
-    if (this.isEmpty()) {
-      return -1;
-    }
-
-    return this.arr[0];
-  }
-}
 
 // HashMap (Map) Operations
 function createHashMapExample() {
@@ -960,53 +879,15 @@ function deleteHashSetValue(hashSet, value) {
   return hashSet;
 }
 
-// Binary Search Algorithm
-function binarySearchAlgo(arr, target) {
-  let left = 0;
-  let right = arr.length - 1;
 
-  while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
-
-    if (arr[mid] === target) {
-      return mid;
-    }
-
-    if (arr[mid] < target) {
-      left = mid + 1;
-    } else {
-      right = mid - 1;
-    }
+// Given an unsorted array arr[] of numbers, sort the array in ascending order.
+// Input: arr[] = [1, 5, 3, 2]
+// Output: [1, 2, 3, 5]
+// Explanation: After sorting, array will be like [1, 2, 3, 5].
+class Solution {
+  sortArr(arr) {
+    return arr.sort((a, b) => a - b);
   }
-
-  return -1;
-}
-
-// Linear Search Algorithm
-function linearSearchAlgo(arr, target) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) {
-      return i;
-    }
-  }
-
-  return -1;
-}
-
-// Find Missing Number in Sequence
-function findMissingNumInSequence(arr) {
-  let sum1 = 0;
-  let sum2 = 0;
-
-  for (let i = 0; i < arr.length; i++) {
-    sum1 += arr[i];
-  }
-
-  for (let i = 1; i <= arr.length + 1; i++) {
-    sum2 += i;
-  }
-
-  return sum2 - sum1;
 }
 
 // Bubble Sort Algorithm
@@ -1066,28 +947,6 @@ function selectionSortAlgo(arr) {
   return result;
 }
 
-// Recursive Factorial Algorithm
-function factorialRecursive(n) {
-  if (n === 0 || n === 1) {
-    return 1;
-  }
 
-  return n * factorialRecursive(n - 1);
-}
 
-// Recursive Number Printing Algorithm
-function printNumbersRecursive(n) {
-  const result = [];
 
-  function helper(num) {
-    if (num === 0) {
-      return;
-    }
-
-    helper(num - 1);
-    result.push(num);
-  }
-
-  helper(n);
-  return result;
-}
