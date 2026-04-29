@@ -1,126 +1,107 @@
-// find the largest element in an array.
-// e.g. [1, 8, 7, 56, 90] -> 90
-class Solution {
-  largest(arr) {
-    let largeNum = 0;
-
-    for (let i = 0; i < arr.length; i++) {
-      if (largeNum < arr[i]) {
-        largeNum = arr[i];
-      }
-    }
-
-    return largeNum;
-  }
-}
-
 // find if element x is present in the array and return its index.
 // e.g. [1, 2, 3, 4], x = 3 -> 2
-class Solution {
-  search(arr, x) {
-    let ans = -1;
+function search(arr, x) {
+  let ans = -1;
 
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === x) {
-        return i;
-      }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === x) {
+      return i;
     }
-
-    return ans;
   }
-}
 
-// determine whether array b is a subset of array a.
-// e.g. a = [11, 7, 1, 13, 21, 3, 7, 3], b = [11, 3, 7, 1, 7] -> true
-class Solution {
-  isSubset(a, b) {
-    let freq = {};
-
-    for (let i = 0; i < a.length; i++) {
-      freq[a[i]] = (freq[a[i]] || 0) + 1;
-    }
-
-    for (let i = 0; i < b.length; i++) {
-      if (!freq[b[i]]) return false;
-      freq[b[i]]--;
-    }
-
-    return true;
-  }
-}
-
-// calculate the sum of all natural numbers from 1 up to n.
-// e.g. n = 5 -> 15
-class Solution {
-  findSum(n) {
-    let sum = 0;
-    if (n == 0) return 0;
-
-    for (let i = 1; i <= n; i++) {
-      sum = sum + i;
-    }
-
-    return sum;
-  }
+  return ans;
 }
 
 // return true if k is present in the sorted array.
 // e.g. [1, 2, 3, 4, 6], k = 6 -> true
-class Solution {
-  searchInSorted(arr, k) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > k) return false;
+function searchInSorted(arr, k) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > k) return false;
 
-      if (arr[i] == k) return true;
+    if (arr[i] == k) return true;
+  }
+}
+
+// find the largest element in an array.
+// e.g. [1, 8, 7, 56, 90] -> 90
+function largest(arr) {
+  let largeNum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (largeNum < arr[i]) {
+      largeNum = arr[i];
     }
   }
+
+  return largeNum;
+}
+
+// calculate the sum of all natural numbers from 1 up to n.
+// e.g. n = 5 -> 15
+function findSum(n) {
+  let sum = 0;
+  if (n == 0) return 0;
+
+  for (let i = 1; i <= n; i++) {
+    sum = sum + i;
+  }
+
+  return sum;
+}
+
+// determine whether array b is a subset of array a.
+// e.g. a = [11, 7, 1, 13, 21, 3, 7, 3], b = [11, 3, 7, 1, 7] -> true
+function isSubset(a, b) {
+  let freq = {};
+
+  for (let i = 0; i < a.length; i++) {
+    freq[a[i]] = (freq[a[i]] || 0) + 1;
+  }
+
+  for (let i = 0; i < b.length; i++) {
+    if (!freq[b[i]]) return false;
+    freq[b[i]]--;
+  }
+
+  return true;
 }
 
 // rotate the array by one position in clockwise direction.
 // e.g. [1, 2, 3, 4, 5] -> [5, 1, 2, 3, 4]
-class Solution {
-  rotate(arr) {
-    let lastElement = arr[arr.length - 1];
-    for (let i = arr.length - 1; i > 0; i--) {
-      arr[i] = arr[i - 1];
-    }
-
-    arr[0] = lastElement;
+function rotate(arr) {
+  let lastElement = arr[arr.length - 1];
+  for (let i = arr.length - 1; i > 0; i--) {
+    arr[i] = arr[i - 1];
   }
+
+  arr[0] = lastElement;
 }
 
-// print all numbers from 1 to n using recursion.
+// print numbers from 1 to n using recursion.
+// e.g. n = 3 ->
+// 1
+// 2
+// 3
+function printNos(n) {
+  if (n === 0) return;
+
+  printNos(n - 1);
+  console.log(n);
+}
+
+// print numbers from 1 to n using recursion.
 // e.g. n = 10 -> 1 2 3 4 5 6 7 8 9 10
-class Solution {
-  printNos(n) {
-    let res = [];
+function printNosHorizontal(n) {
+  let res = [];
 
-    function helper(x) {
-      if (x === 0) return;
-      helper(x - 1);
-      res.push(x);
-    }
-
-    helper(n);
-    console.log(res.join(" "));
-  }
-}
-
-// recursive number printing algorithm.
-function printNumbersRecursive(n) {
-  const result = [];
-
-  function helper(num) {
-    if (num === 0) {
-      return;
-    }
-
-    helper(num - 1);
-    result.push(num);
+  function helper(x) {
+    if (x === 0) return;
+    helper(x - 1);
+    res.push(x);
   }
 
   helper(n);
-  return result;
+  console.log(res.join(" "));
 }
 
 // find the length of the singly linked list.
@@ -132,41 +113,37 @@ function printNumbersRecursive(n) {
 //         this.next = null;
 //     }
 // }
-class Solution {
-  getCount(head) {
-    let count = 0;
+function getCount(head) {
+  let count = 0;
 
-    let currNode = head;
+  let currNode = head;
 
-    while (currNode != null) {
-      count++;
-      currNode = currNode.next;
-    }
-    return count;
+  while (currNode != null) {
+    count++;
+    currNode = currNode.next;
   }
+  return count;
 }
 
 // return an array containing the first n fibonacci numbers.
 // e.g. n = 5 -> [0, 1, 1, 2, 3]
-class Solution {
-  fibonacciNumbers(n) {
-    let a = 0,
-      b = 1;
+function fibonacciNumbers(n) {
+  let a = 0,
+    b = 1;
 
-    if (n == 1) return [0];
-    if (n == 2) return [0, 1];
+  if (n == 1) return [0];
+  if (n == 2) return [0, 1];
 
-    let arr = [a, b];
+  let arr = [a, b];
 
-    for (let i = 2; i < n; i++) {
-      let sum = a + b;
-      arr.push(sum);
-      a = b;
-      b = sum;
-    }
-
-    return arr;
+  for (let i = 2; i < n; i++) {
+    let sum = a + b;
+    arr.push(sum);
+    a = b;
+    b = sum;
   }
+
+  return arr;
 }
 
 // reverse an array.
@@ -188,53 +165,47 @@ function reverseArr(arr) {
 
 // remove all duplicate numbers from the array.
 // e.g. [2, 2, 3, 3, 7, 5] -> [2, 3, 7, 5]
-class Solution {
-  remDuplicate(arr) {
-    let obj = {};
-    let result = [];
+function remDuplicate(arr) {
+  let obj = {};
+  let result = [];
 
-    for (let i = 0; i < arr.length; i++) {
-      if (!obj[arr[i]]) {
-        obj[arr[i]] = true;
-        result[result.length] = arr[i];
-      }
+  for (let i = 0; i < arr.length; i++) {
+    if (!obj[arr[i]]) {
+      obj[arr[i]] = true;
+      result[result.length] = arr[i];
     }
-
-    return result;
   }
+
+  return result;
 }
 
 // compute the lcm and gcd of two integers.
 // e.g. a = 5, b = 10 -> [10, 5]
-class Solution {
-  lcmAndGcd(a, b) {
-    let x = a,
-      y = b;
+function lcmAndGcd(a, b) {
+  let x = a,
+    y = b;
 
-    // GCD using Euclidean Algorithm
-    while (y !== 0) {
-      let temp = y;
-      y = x % y;
-      x = temp;
-    }
-
-    let gcd = x;
-    let lcm = (a * b) / gcd;
-
-    return [lcm, gcd];
+  // GCD using Euclidean Algorithm
+  while (y !== 0) {
+    let temp = y;
+    y = x % y;
+    x = temp;
   }
+
+  let gcd = x;
+  let lcm = (a * b) / gcd;
+
+  return [lcm, gcd];
 }
 
 // find the factorial of a positive integer n.
 // e.g. n = 5 -> 120
-class Solution {
-  factorial(n) {
-    let ans = 1;
-    for (let i = n; i > 0; i--) {
-      ans *= i;
-    }
-    return ans;
+function factorial(n) {
+  let ans = 1;
+  for (let i = n; i > 0; i--) {
+    ans *= i;
   }
+  return ans;
 }
 
 // recursive factorial algorithm.
@@ -248,72 +219,64 @@ function factorialRecursive(n) {
 
 // determine whether a positive integer n is even or odd.
 // e.g. n = 15 -> false
-class Solution {
-  isEven(n) {
-    if (n % 2 == 0) {
-      return true;
-    }
-    return false;
+function isEven(n) {
+  if (n % 2 == 0) {
+    return true;
   }
+  return false;
 }
 
 // return the index of the first occurrence of substring pat in txt.
 // e.g. txt = "GeeksForGeeks", pat = "For" -> 5
-class Solution {
-  firstOccurence(txt, pat) {
-    let n = txt.length;
-    let m = pat.length;
+function firstOccurence(txt, pat) {
+  let n = txt.length;
+  let m = pat.length;
 
-    for (let i = 0; i <= n - m; i++) {
-      let j;
-      for (j = 0; j < m; j++) {
-        if (txt[i + j] !== pat[j]) {
-          break;
-        }
+  for (let i = 0; i <= n - m; i++) {
+    let j;
+    for (j = 0; j < m; j++) {
+      if (txt[i + j] !== pat[j]) {
+        break;
       }
-      if (j === m) return i;
     }
-
-    return -1;
+    if (j === m) return i;
   }
+
+  return -1;
 }
 
 // find the sum of the integer array.
 // e.g. [1, 2, 3, 4] -> 10
-class Solution {
-  arraySum(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-      sum += arr[i];
-    }
-
-    return sum;
+function arraySum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
   }
+
+  return sum;
 }
 
 // find position of k in sorted array using binary search.
 // e.g. [1, 2, 3, 4, 5], k = 4 -> 3
-class Solution {
-  binarysearch(arr, k) {
-    let low = 0;
-    let high = arr.length - 1;
-    let ans = -1;
+function binarysearch(arr, k) {
+  let low = 0;
+  let high = arr.length - 1;
+  let ans = -1;
 
-    while (low <= high) {
-      let mid = Math.floor((low + high) / 2);
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
 
-      if (arr[mid] == k) {
-        ans = mid;
-        high = mid - 1; // move left to find smaller index
-      } else if (arr[mid] < k) {
-        low = mid + 1;
-      } else {
-        high = mid - 1;
-      }
+    if (arr[mid] == k) {
+      ans = mid;
+      high = mid - 1; // move left to find smaller index
+    } else if (arr[mid] < k) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
     }
-
-    return ans;
   }
+
+  return ans;
 }
 
 // find equilibrium point.
@@ -835,10 +798,8 @@ function deleteHashSetValue(hashSet, value) {
 
 // sort the array in ascending order.
 // e.g. [1, 5, 3, 2] -> [1, 2, 3, 5]
-class Solution {
-  sortArr(arr) {
-    return arr.sort((a, b) => a - b);
-  }
+function sortArr(arr) {
+  return arr.sort((a, b) => a - b);
 }
 
 // bubble sort algorithm.
