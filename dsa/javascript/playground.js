@@ -1,4 +1,4 @@
-let n = 4;
+﻿let n = 4;
 
 let count = 1;
 
@@ -20,3 +20,4 @@ for (let i = 1; i <= n; i++) {
 
 console.log(3, 4, "adsf");
 console.log();
+

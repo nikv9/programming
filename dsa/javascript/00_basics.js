@@ -1,3 +1,36 @@
+﻿// common ways to define and run code in javascript.
+function normalFunctionExample(a, b) {
+  return a + b;
+}
+
+const arrowFunctionExample = (a, b) => {
+  return a + b;
+};
+
+class ClassExample {
+  constructor(value) {
+    this.value = value;
+  }
+
+  getValue() {
+    return this.value;
+  }
+}
+
+const objectMethodExample = {
+  add(a, b) {
+    return a + b;
+  },
+};
+
+let directCodeExample = 10 + 20;
+
+console.log(normalFunctionExample(2, 3));
+console.log(arrowFunctionExample(2, 3));
+console.log(new ClassExample(10).getValue());
+console.log(objectMethodExample.add(2, 3));
+console.log(directCodeExample);
+
 // patterns
 function main() {
   const n = 4;
@@ -143,3 +176,4 @@ function main() {
 }
 
 main();
+

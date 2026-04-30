@@ -1,4 +1,34 @@
-# Patterns
+# common ways to define and run code in Python.
+def normal_function_example(a, b):
+    return a + b
+
+
+lambda_function_example = lambda a, b: a + b
+
+
+class ClassExample:
+    def __init__(self, value):
+        self.value = value
+
+    def get_value(self):
+        return self.value
+
+
+object_method_example = {
+    "add": lambda a, b: a + b
+}
+
+
+direct_code_example = 10 + 20
+
+print(normal_function_example(2, 3))
+print(lambda_function_example(2, 3))
+print(ClassExample(10).get_value())
+print(object_method_example["add"](2, 3))
+print(direct_code_example)
+
+
+# patterns
 def main():
     n = 4
     # i = row index, j = column index
