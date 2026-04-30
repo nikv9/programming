@@ -1,4 +1,4 @@
-﻿// Stack
+// Stack
 
 // basic operations of stack.
 class ArrayStack {
@@ -72,7 +72,6 @@ class LinkedListStack {
     return this.head.data;
   }
 }
-
 
 // parenthesis checker.
 function isParenthesisBalanced(str) {
@@ -196,5 +195,3 @@ class TwoStacksInArray {
     return this.arr[this.top2++];
   }
 }
-
-

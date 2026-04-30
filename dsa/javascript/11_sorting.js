@@ -1,6 +1,5 @@
-﻿// Sorting
+// Sorting
 
-// sort the array in ascending order.
 // e.g. [1, 5, 3, 2] -> [1, 2, 3, 5]
 function sortArrayAscending(arr) {
   return arr.sort((a, b) => a - b);
@@ -18,25 +17,6 @@ function bubbleSortAlgo(arr) {
         result[j + 1] = temp;
       }
     }
-  }
-
-  return result;
-}
-
-// insertion sort algorithm.
-function insertionSortAlgo(arr) {
-  const result = [...arr];
-
-  for (let i = 1; i < result.length; i++) {
-    const key = result[i];
-    let j = i - 1;
-
-    while (j >= 0 && result[j] > key) {
-      result[j + 1] = result[j];
-      j--;
-    }
-
-    result[j + 1] = key;
   }
 
   return result;
@@ -63,4 +43,21 @@ function selectionSortAlgo(arr) {
   return result;
 }
 
-// find leaders in an array.
+// insertion sort algorithm.
+function insertionSortAlgo(arr) {
+  const result = [...arr];
+
+  for (let i = 1; i < result.length; i++) {
+    const key = result[i];
+    let j = i - 1;
+
+    while (j >= 0 && result[j] > key) {
+      result[j + 1] = result[j];
+      j--;
+    }
+
+    result[j + 1] = key;
+  }
+
+  return result;
+}

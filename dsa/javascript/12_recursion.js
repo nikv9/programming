@@ -1,4 +1,4 @@
-﻿// Recursion
+// Recursion
 
 // calculate the sum of all natural numbers from 1 up to n.
 // e.g. n = 5 -> 15
@@ -11,6 +11,15 @@ function sumOfNaturalNumbers(n) {
   }
 
   return sum;
+}
+
+// determine whether a positive integer n is even or odd.
+// e.g. n = 15 -> false
+function isEven(n) {
+  if (n % 2 == 0) {
+    return true;
+  }
+  return false;
 }
 
 // print numbers from 1 to n using recursion.
@@ -40,6 +49,25 @@ function printNumbersHorizontal(n) {
   console.log(res.join(" "));
 }
 
+// find the factorial of a positive integer n.
+// e.g. n = 5 -> 120
+function factorial(n) {
+  let ans = 1;
+  for (let i = n; i > 0; i--) {
+    ans *= i;
+  }
+  return ans;
+}
+
+// recursive factorial algorithm.
+function factorialRecursive(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+
+  return n * factorialRecursive(n - 1);
+}
+
 // return an array containing the first n fibonacci numbers.
 // e.g. n = 5 -> [0, 1, 1, 2, 3]
 function fibonacciNumbers(n) {
@@ -61,7 +89,6 @@ function fibonacciNumbers(n) {
   return arr;
 }
 
-
 // compute the lcm and gcd of two integers.
 // e.g. a = 5, b = 10 -> [10, 5]
 function lcmAndGcd(a, b) {
@@ -80,32 +107,3 @@ function lcmAndGcd(a, b) {
 
   return [lcm, gcd];
 }
-
-// find the factorial of a positive integer n.
-// e.g. n = 5 -> 120
-function factorial(n) {
-  let ans = 1;
-  for (let i = n; i > 0; i--) {
-    ans *= i;
-  }
-  return ans;
-}
-
-// recursive factorial algorithm.
-function factorialRecursive(n) {
-  if (n === 0 || n === 1) {
-    return 1;
-  }
-
-  return n * factorialRecursive(n - 1);
-}
-
-// determine whether a positive integer n is even or odd.
-// e.g. n = 15 -> false
-function isEven(n) {
-  if (n % 2 == 0) {
-    return true;
-  }
-  return false;
-}
-

@@ -85,7 +85,6 @@ class LinkedListQueue {
   }
 }
 
-
 // queue using stack.
 class QueueUsingStacks {
   constructor() {
@@ -115,4 +114,3 @@ class QueueUsingStacks {
     return answer;
   }
 }
-

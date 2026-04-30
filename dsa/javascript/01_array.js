@@ -1,6 +1,16 @@
-﻿// Array
+// Array
 
-// find the largest element in an array.
+// find the sum of the integer array.
+// e.g. [1, 2, 3, 4] -> 10
+function arraySum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum;
+}
+
 // e.g. [1, 8, 7, 56, 90] -> 90
 function findLargestElement(arr) {
   let largeNum = 0;
@@ -14,33 +24,22 @@ function findLargestElement(arr) {
   return largeNum;
 }
 
+// find min and max value.
+function findMinMax(arr) {
+  let min = arr[0];
+  let max = arr[0];
 
-// determine whether array b is a subset of array a.
-// e.g. a = [11, 7, 1, 13, 21, 3, 7, 3], b = [11, 3, 7, 1, 7] -> true
-function isSubset(a, b) {
-  let freq = {};
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
 
-  for (let i = 0; i < a.length; i++) {
-    freq[a[i]] = (freq[a[i]] || 0) + 1;
+    if (arr[i] > max) {
+      max = arr[i];
+    }
   }
 
-  for (let i = 0; i < b.length; i++) {
-    if (!freq[b[i]]) return false;
-    freq[b[i]]--;
-  }
-
-  return true;
-}
-
-// rotate the array by one position in clockwise direction.
-// e.g. [1, 2, 3, 4, 5] -> [5, 1, 2, 3, 4]
-function rotateArrayByOne(arr) {
-  let lastElement = arr[arr.length - 1];
-  for (let i = arr.length - 1; i > 0; i--) {
-    arr[i] = arr[i - 1];
-  }
-
-  arr[0] = lastElement;
+  return { min, max };
 }
 
 // reverse an array.
@@ -55,6 +54,46 @@ function reverseArray(arr) {
 
     left++;
     right--;
+  }
+
+  return arr;
+}
+
+// swap alternate elements.
+function swapAlternateElements(arr) {
+  for (let i = 0; i < arr.length - 1; i += 2) {
+    const temp = arr[i];
+    arr[i] = arr[i + 1];
+    arr[i + 1] = temp;
+  }
+
+  return arr;
+}
+
+// rotate the array by one position in clockwise direction.
+// e.g. [1, 2, 3, 4, 5] -> [5, 1, 2, 3, 4]
+function rotateArrayByOne(arr) {
+  let lastElement = arr[arr.length - 1];
+  for (let i = arr.length - 1; i > 0; i--) {
+    arr[i] = arr[i - 1];
+  }
+
+  arr[0] = lastElement;
+}
+
+// rotate array.
+function rotateArrayLeft(arr, pos) {
+  let count = 1;
+
+  while (count <= pos) {
+    const first = arr[0];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+      arr[i] = arr[i + 1];
+    }
+
+    arr[arr.length - 1] = first;
+    count++;
   }
 
   return arr;
@@ -76,44 +115,6 @@ function removeDuplicateValues(arr) {
   return result;
 }
 
-
-// find the sum of the integer array.
-// e.g. [1, 2, 3, 4] -> 10
-function arraySum(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-
-  return sum;
-}
-
-
-// find equilibrium point.
-function equilibriumPoint(arr) {
-  if (arr.length === 1) {
-    return 1;
-  }
-
-  let totalSum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    totalSum += arr[i];
-  }
-
-  let leftSum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    totalSum -= arr[i];
-
-    if (leftSum === totalSum) {
-      return i + 1;
-    }
-
-    leftSum += arr[i];
-  }
-
-  return -1;
-}
-
 // find duplicates.
 function findDuplicates(arr) {
   const seen = new Set();
@@ -128,24 +129,6 @@ function findDuplicates(arr) {
   }
 
   return duplicates.length === 0 ? [-1] : duplicates;
-}
-
-// find min and max value.
-function findMinMax(arr) {
-  let min = arr[0];
-  let max = arr[0];
-
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < min) {
-      min = arr[i];
-    }
-
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-  }
-
-  return { min, max };
 }
 
 // find unique value.
@@ -168,6 +151,23 @@ function findUniqueValues(arr) {
   }
 
   return result;
+}
+
+// determine whether array b is a subset of array a.
+// e.g. a = [11, 7, 1, 13, 21, 3, 7, 3], b = [11, 3, 7, 1, 7] -> true
+function isSubset(a, b) {
+  let freq = {};
+
+  for (let i = 0; i < a.length; i++) {
+    freq[a[i]] = (freq[a[i]] || 0) + 1;
+  }
+
+  for (let i = 0; i < b.length; i++) {
+    if (!freq[b[i]]) return false;
+    freq[b[i]]--;
+  }
+
+  return true;
 }
 
 // find the missing number from range 0 to n in array.
@@ -212,36 +212,6 @@ function pairSum(arr, target) {
   return pairs;
 }
 
-// rotate array.
-function rotateArrayLeft(arr, pos) {
-  let count = 1;
-
-  while (count <= pos) {
-    const first = arr[0];
-
-    for (let i = 0; i < arr.length - 1; i++) {
-      arr[i] = arr[i + 1];
-    }
-
-    arr[arr.length - 1] = first;
-    count++;
-  }
-
-  return arr;
-}
-
-// swap alternate elements.
-function swapAlternateElements(arr) {
-  for (let i = 0; i < arr.length - 1; i += 2) {
-    const temp = arr[i];
-    arr[i] = arr[i + 1];
-    arr[i + 1] = temp;
-  }
-
-  return arr;
-}
-
-
 // find leaders in an array.
 function leadersInArray(arr) {
   const result = [];
@@ -257,21 +227,29 @@ function leadersInArray(arr) {
   return result.reverse();
 }
 
-// maximum subarray sum (kadane's algorithm).
-function maxSubarraySum(arr) {
-  let currentSum = 0;
-  let maxSum = Number.MIN_SAFE_INTEGER;
-
-  for (let i = 0; i < arr.length; i++) {
-    currentSum += arr[i];
-    maxSum = Math.max(maxSum, currentSum);
-
-    if (currentSum < 0) {
-      currentSum = 0;
-    }
+// find equilibrium point.
+function equilibriumPoint(arr) {
+  if (arr.length === 1) {
+    return 1;
   }
 
-  return maxSum;
+  let totalSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    totalSum += arr[i];
+  }
+
+  let leftSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    totalSum -= arr[i];
+
+    if (leftSum === totalSum) {
+      return i + 1;
+    }
+
+    leftSum += arr[i];
+  }
+
+  return -1;
 }
 
 // sort an array of 0s, 1s, and 2s (dutch national flag algorithm).
@@ -298,6 +276,23 @@ function sort012(arr) {
   }
 
   return arr;
+}
+
+// maximum subarray sum (kadane's algorithm).
+function maxSubarraySum(arr) {
+  let currentSum = 0;
+  let maxSum = Number.MIN_SAFE_INTEGER;
+
+  for (let i = 0; i < arr.length; i++) {
+    currentSum += arr[i];
+    maxSum = Math.max(maxSum, currentSum);
+
+    if (currentSum < 0) {
+      currentSum = 0;
+    }
+  }
+
+  return maxSum;
 }
 
 // find subarray with a given sum.
@@ -340,4 +335,3 @@ function tripletSum(arr, target) {
 
   return triplets;
 }
-

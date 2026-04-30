@@ -1,33 +1,4 @@
-﻿// String
-
-// check if two strings are anagrams.
-function isAnagram(a, b) {
-  if (a.length !== b.length) {
-    return false;
-  }
-
-  const first = a.split("").sort().join("");
-  const second = b.split("").sort().join("");
-
-  return first === second;
-}
-
-// check if a string is a palindrome.
-function isPalindrome(str) {
-  let left = 0;
-  let right = str.length - 1;
-
-  while (left < right) {
-    if (str.charAt(left) !== str.charAt(right)) {
-      return 0;
-    }
-
-    left++;
-    right--;
-  }
-
-  return 1;
-}
+// String
 
 // reverse a string.
 function reverseStringManual(str) {
@@ -74,4 +45,33 @@ function reverseWordsInSentence(str) {
   }
 
   return result;
+}
+
+// check if a string is a palindrome.
+function isPalindrome(str) {
+  let left = 0;
+  let right = str.length - 1;
+
+  while (left < right) {
+    if (str.charAt(left) !== str.charAt(right)) {
+      return 0;
+    }
+
+    left++;
+    right--;
+  }
+
+  return 1;
+}
+
+// check if two strings are anagrams.
+function isAnagram(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  }
+
+  const first = a.split("").sort().join("");
+  const second = b.split("").sort().join("");
+
+  return first === second;
 }

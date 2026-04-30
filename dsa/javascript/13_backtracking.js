@@ -1,4 +1,4 @@
-﻿// Backtracking
+// Backtracking
 
 // subset generation
 function printSubsetsIterative(nums) {

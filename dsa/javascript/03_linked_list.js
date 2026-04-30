@@ -1,7 +1,6 @@
-﻿// LinkedList
+// LinkedList
 
-// find the length of the singly linked list.
-// e.g. 1->2->3->4->5 -> 5
+// LinkedList
 
 class Node {
   constructor(data) {
@@ -9,6 +8,7 @@ class Node {
     this.next = null;
   }
 }
+
 function getLinkedListLength(head) {
   let count = 0;
 
@@ -20,7 +20,6 @@ function getLinkedListLength(head) {
   }
   return count;
 }
-
 
 // basic linked list operations.
 class BasicListNode {
@@ -110,33 +109,12 @@ class BasicLinkedList {
   }
 }
 
-
 // detect loop in linked list.
 class HardListNode {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
-}
-
-function detectLoop(head) {
-  if (head === null) {
-    return false;
-  }
-
-  let slow = head;
-  let fast = head;
-
-  while (fast !== null && fast.next !== null) {
-    slow = slow.next;
-    fast = fast.next.next;
-
-    if (slow === fast) {
-      return true;
-    }
-  }
-
-  return false;
 }
 
 // finding middle element in a linked list.
@@ -230,3 +208,22 @@ function reverseListRecursive(head) {
   return newHead;
 }
 
+function detectLoop(head) {
+  if (head === null) {
+    return false;
+  }
+
+  let slow = head;
+  let fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (slow === fast) {
+      return true;
+    }
+  }
+
+  return false;
+}
