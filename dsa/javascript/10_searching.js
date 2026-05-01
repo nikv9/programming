@@ -10,6 +10,7 @@ function linearSearch(arr, x) {
 
   return ans;
 }
+// console.log(linearSearch([1, 2, 3], 2));
 
 // return true if k is present in the sorted array.
 // e.g. [1, 2, 3, 4, 6], k = 6 -> true

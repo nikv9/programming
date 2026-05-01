@@ -7,6 +7,8 @@ function createHashMapExample() {
   hashMap.set("Aus", 50);
   return hashMap;
 }
+// const m = createHashMapExample(); 
+// console.log(m.get("India"));
 
 function searchHashMapKey(hashMap, key) {
   return hashMap.has(key);

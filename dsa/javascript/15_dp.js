@@ -10,3 +10,4 @@ function fibonacciDP(n) {
 
   return fib[n];
 }
+// console.log(fibonacciDP(10));

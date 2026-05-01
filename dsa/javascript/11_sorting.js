@@ -2,6 +2,7 @@
 function sortArrayAscending(arr) {
   return arr.sort((a, b) => a - b);
 }
+// console.log(sortArrayAscending([5, 2, 8]));
 
 // bubble sort algorithm.
 function bubbleSortAlgo(arr) {

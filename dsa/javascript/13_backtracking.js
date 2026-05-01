@@ -17,6 +17,7 @@ function printSubsetsIterative(nums) {
 
   return subsets;
 }
+// console.log(printSubsetsIterative([1, 2]));
 
 function printSubsetsBacktracking(nums) {
   const subsets = [];

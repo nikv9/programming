@@ -8,6 +8,7 @@ function reverseStringManual(str) {
 
   return reversed;
 }
+// console.log(reverseStringManual("hello"));
 
 function reverseStringBuiltIn(str) {
   return str.split("").reverse().join("");

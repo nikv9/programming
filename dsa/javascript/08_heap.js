@@ -72,6 +72,9 @@ class MaxHeap {
     return max;
   }
 }
+// const h = new MaxHeap(10); 
+// h.insert(50); 
+// console.log(h.extractMax());
 
 // min heap implementation.
 class MinHeap {

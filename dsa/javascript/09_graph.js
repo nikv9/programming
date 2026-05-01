@@ -22,6 +22,8 @@ function createAdjacencyList(graph) {
 
   return graph;
 }
+// const graph = createAdjacencyList(new Array(4));
+// console.log(graph[0]);
 
 // graph implementation using adjacency list (object-based).
 class AdjacencyListGraph {

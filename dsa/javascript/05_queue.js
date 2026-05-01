@@ -28,6 +28,9 @@ class BasicQueue {
     return this.items.length === 0;
   }
 }
+// const q = new BasicQueue(); 
+// q.enqueue(10); 
+// console.log(q.dequeue());
 
 // queue using linkedlist.
 class LinkedQueueNode {

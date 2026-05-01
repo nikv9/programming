@@ -10,6 +10,7 @@ function sumOfNaturalNumbers(n) {
 
   return sum;
 }
+// console.log(sumOfNaturalNumbers(5));
 
 // determine whether a positive integer n is even or odd.
 // e.g. n = 15 -> false

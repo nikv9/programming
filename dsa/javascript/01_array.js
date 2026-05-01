@@ -8,6 +8,7 @@ function arraySum(arr) {
 
   return sum;
 }
+// console.log(arraySum([1, 2, 3]));
 
 // e.g. [1, 8, 7, 56, 90] -> 90
 function findLargestElement(arr) {

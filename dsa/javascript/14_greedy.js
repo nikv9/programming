@@ -16,3 +16,4 @@ function coinChange(coins, amount) {
 
   return count;
 }
+// console.log(coinChange([1, 2, 5], 11));

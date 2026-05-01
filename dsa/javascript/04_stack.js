@@ -28,6 +28,9 @@ class ArrayStack {
     return this.list[this.list.length - 1];
   }
 }
+// const s = new ArrayStack(); 
+// s.push(10); 
+// console.log(s.pop());
 
 // stack using linkedlist.
 class LinkedStackNode {

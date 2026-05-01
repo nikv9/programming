@@ -25,6 +25,10 @@ class BinaryTreeBuilder {
     return newNode;
   }
 }
+// const root = new TreeNode(1); 
+// root.left = new TreeNode(2);
+// const builder = new BinaryTreeBuilder(); 
+// const tree = builder.buildTree([1, 2, -1, -1, 3, -1, -1]);
 
 function preorderTraversal(root, result = []) {
   if (root === null) {

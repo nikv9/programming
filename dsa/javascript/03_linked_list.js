@@ -17,6 +17,9 @@ function getLinkedListLength(head) {
   }
   return count;
 }
+// const head = new Node(1); 
+// head.next = new Node(2);
+// console.log(getLinkedListLength(head));
 
 // basic linked list operations.
 class BasicListNode {

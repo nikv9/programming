@@ -9,6 +9,7 @@ function printNumbersVertical(n) {
   printNumbersVertical(n - 1);
   console.log(n);
 }
+// printNumbersVertical(3);
 
 // print numbers from 1 to n using recursion.
 // e.g. n = 10 -> 1 2 3 4 5 6 7 8 9 10
