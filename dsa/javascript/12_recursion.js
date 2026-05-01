@@ -22,6 +22,11 @@ function isEven(n) {
   return false;
 }
 
+// bitwise method
+function isEvenBitwise(n) {
+  return (n & 1) === 0;
+}
+
 // print numbers from 1 to n using recursion.
 // e.g. n = 3 ->
 // 1

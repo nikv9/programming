@@ -295,6 +295,29 @@ function maxSubarraySum(arr) {
   return maxSum;
 }
 
+// find maximum sum of subarray of size k (sliding window).
+// e.g. arr = [1, 2, 3, 4, 5], k = 3 -> 12
+function maxSumSubarrayOfSizeK(arr, k) {
+  if (k > arr.length) {
+    return -1;
+  }
+
+  let windowSum = 0;
+
+  for (let i = 0; i < k; i++) {
+    windowSum += arr[i];
+  }
+
+  let maxSum = windowSum;
+
+  for (let i = k; i < arr.length; i++) {
+    windowSum += arr[i] - arr[i - k];
+    maxSum = Math.max(maxSum, windowSum);
+  }
+
+  return maxSum;
+}
+
 // find subarray with a given sum.
 function subarraySum(arr, target) {
   const prefixMap = new Map();
