@@ -1,5 +1,3 @@
-// String
-
 // reverse a string.
 function reverseStringManual(str) {
   let reversed = "";

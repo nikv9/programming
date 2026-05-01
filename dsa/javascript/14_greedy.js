@@ -1,5 +1,3 @@
-﻿// Greedy
-
 // greedy coin change algorithm.
 function coinChange(coins, amount) {
   const sortedCoins = [...coins].sort((a, b) => b - a);

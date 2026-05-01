@@ -1,5 +1,3 @@
-﻿// Heap
-
 // max heap implementation.
 class MaxHeap {
   constructor(size) {

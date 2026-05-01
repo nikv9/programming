@@ -1,5 +1,3 @@
-// Backtracking
-
 // subset generation
 function printSubsetsIterative(nums) {
   const subsets = [];

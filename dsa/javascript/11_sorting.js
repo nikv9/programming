@@ -1,6 +1,4 @@
-// Sorting
-
-// e.g. [1, 5, 3, 2] -> [1, 2, 3, 5]
+// sort array in ascending order.
 function sortArrayAscending(arr) {
   return arr.sort((a, b) => a - b);
 }

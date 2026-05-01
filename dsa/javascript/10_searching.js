@@ -1,6 +1,4 @@
-// Searching
-
-// e.g. [1, 2, 3, 4], x = 3 -> 2
+// linear search implementation.
 function linearSearch(arr, x) {
   let ans = -1;
 

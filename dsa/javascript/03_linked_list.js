@@ -1,7 +1,4 @@
-// LinkedList
-
-// LinkedList
-
+// linked list implementation and length.
 class Node {
   constructor(data) {
     this.data = data;

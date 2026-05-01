@@ -1,5 +1,3 @@
-﻿// Queue
-
 // basic operation of queue.
 class BasicQueue {
   constructor() {

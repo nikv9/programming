@@ -1,7 +1,3 @@
-// Tree
-
-// Tree
-
 // binary tree implementation and traversal.
 class TreeNode {
   constructor(data) {

@@ -1,5 +1,3 @@
-﻿// Graph
-
 // graph representation using adjacency list.
 class GraphEdge {
   constructor(src, dest) {

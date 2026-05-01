@@ -1,5 +1,3 @@
-// Array
-
 // find the sum of the integer array.
 // e.g. [1, 2, 3, 4] -> 10
 function arraySum(arr) {

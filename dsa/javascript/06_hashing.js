@@ -1,5 +1,3 @@
-﻿// Hash
-
 // hashmap (map) operations.
 function createHashMapExample() {
   const hashMap = new Map();

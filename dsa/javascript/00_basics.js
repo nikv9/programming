@@ -1,45 +1,90 @@
-﻿// common ways to define and run code in javascript.
-function normalFunctionExample(a, b) {
+// variables and scope
+const x = "immutable";
+let y = "mutable";
+
+if (true) {
+  let a = "scoped";
+  var b = "unscoped";
+}
+
+// functions
+function normalFunction(a, b) {
   return a + b;
 }
 
-const arrowFunctionExample = (a, b) => {
-  return a + b;
-};
+const arrowFunction = (a, b) => a + b;
 
-class ClassExample {
-  constructor(value) {
-    this.value = value;
-  }
+console.log(normalFunction(2, 3)); // 5
+console.log(arrowFunction(2, 3)); // 5
 
-  getValue() {
-    return this.value;
-  }
-}
-
-const objectMethodExample = {
-  add(a, b) {
-    return a + b;
+// objects and classes
+const person = {
+  name: "nik",
+  greet() {
+    return `hello, ${this.name}`;
   },
 };
 
-let directCodeExample = 10 + 20;
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
+}
 
-console.log(normalFunctionExample(2, 3));
-console.log(arrowFunctionExample(2, 3));
-console.log(new ClassExample(10).getValue());
-console.log(objectMethodExample.add(2, 3));
-console.log(directCodeExample);
+console.log(person.greet()); // hello, nik
+const me = new User("nik");
+console.log(me.getName()); // nik
+
+// the 'this' keyword
+const contextExample = {
+  value: 42,
+  normal() {
+    console.log("normal 'this':", this.value); // refers to contextExample
+  },
+  arrow: () => {
+    console.log("arrow 'this':", this.value); // refers to outer scope
+  },
+};
+
+contextExample.normal();
+contextExample.arrow();
+
+// destructuring
+const { name: userName } = person;
+const [first, second] = [1, 2];
+
+// spread and rest (...)
+const arr = [1, 2];
+const newArr = [...arr, 3]; // spread
+
+function sumAll(...args) {
+  // rest
+  return args.reduce((s, n) => s + n, 0);
+}
+
+console.log(userName, first, second); // nik 1 2
+console.log(newArr); // [1, 2, 3]
+console.log(sumAll(1, 2, 3)); // 6
+
+// array methods (map, filter, reduce)
+const nums = [1, 2, 3, 4, 5];
+const doubled = nums.map((n) => n * 2);
+const evens = nums.filter((n) => n % 2 === 0);
+const total = nums.reduce((s, n) => s + n, 0);
+
+console.log(doubled, evens, total); // [2, 4, 6, 8, 10], [2, 4], 15
 
 // patterns
 function main() {
-  const n = 4;
   // i = row index, j = column index
 
-  // * * * *
-  // * * * *
-  // * * * *
-  // * * * *
+  const n = 3;
+  // * * *
+  // * * *
+  // * * *
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= n; j++) {
@@ -51,7 +96,6 @@ function main() {
   // *
   // * *
   // * * *
-  // * * * *
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= i; j++) {
@@ -60,76 +104,70 @@ function main() {
     console.log(line);
   }
 
-  // 1111
-  // 2222
-  // 3333
-  // 4444
+  // 1 1 1
+  // 2 2 2
+  // 3 3 3
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= n; j++) {
-      line += i;
+      line += i + " ";
     }
     console.log(line);
   }
 
   // 1
-  // 22
-  // 333
-  // 4444
+  // 2 2
+  // 3 3 3
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= i; j++) {
-      line += i;
+      line += i + " ";
     }
     console.log(line);
   }
 
-  // 1234
-  // 1234
-  // 1234
-  // 1234
+  // 1 2 3
+  // 1 2 3
+  // 1 2 3
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= n; j++) {
-      line += j;
+      line += j + " ";
     }
     console.log(line);
   }
 
-  // 4444
-  // 3333
-  // 2222
-  // 1111
+  // 3 3 3
+  // 2 2 2
+  // 1 1 1
   for (let i = n; i >= 1; i--) {
     let line = "";
     for (let j = 1; j <= n; j++) {
-      line += i;
+      line += i + " ";
     }
     console.log(line);
   }
 
-  // 4321
-  // 4321
-  // 4321
-  // 4321
+  // 3 2 1
+  // 3 2 1
+  // 3 2 1
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = n; j >= 1; j--) {
-      line += j;
+      line += j + " ";
     }
     console.log(line);
   }
 
-  // 1 2 3 4
-  // 5 6 7 8
-  // 9 10 11 12
-  // 13 14 15 16
+  // 1 2 3
+  // 4 5 6
+  // 7 8 9
   {
     let count = 1;
     for (let i = 1; i <= n; i++) {
       let line = "";
       for (let j = 1; j <= n; j++) {
-        line = line + count + " ";
+        line += count + " ";
         count++;
       }
       console.log(line);
@@ -139,7 +177,6 @@ function main() {
   // 1
   // 2 1
   // 3 2 1
-  // 4 3 2 1
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = i; j >= 1; j--) {
@@ -148,31 +185,28 @@ function main() {
     console.log(line);
   }
 
-  //  AAAA
-  //  BBBB
-  //  CCCC
-  //  DDDD
+  // A A A
+  // B B B
+  // C C C
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= n; j++) {
-      const x = String.fromCharCode("A".charCodeAt(0) + i - 1);
-      line += x;
+      line += String.fromCharCode(64 + i) + " ";
     }
     console.log(line);
   }
 
-  // ABCD
-  // ABCD
-  // ABCD
-  // ABCD
+  // A B C
+  // A B C
+  // A B C
   for (let i = 1; i <= n; i++) {
     let line = "";
     for (let j = 1; j <= n; j++) {
-      const letter = String.fromCharCode("A".charCodeAt(0) + j - 1);
-      line += letter;
+      line += String.fromCharCode(64 + j) + " ";
     }
     console.log(line);
   }
+
 }
 
 main();

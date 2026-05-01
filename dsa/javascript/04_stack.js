@@ -1,5 +1,3 @@
-// Stack
-
 // basic operations of stack.
 class ArrayStack {
   constructor() {

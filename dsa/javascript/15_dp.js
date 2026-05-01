@@ -1,5 +1,3 @@
-﻿// DP
-
 // dynamic programming fibonacci algorithm.
 function fibonacciDP(n) {
   const fib = [];
